@@ -1,6 +1,7 @@
 @baseUrl = http://localhost:3333
 
-POST {{{baseUrl}}/accounts
+# @name create_account
+POST http://localhost:3333/accounts
 Content-Type: application/json
 
 {
@@ -11,11 +12,11 @@ Content-Type: application/json
 
 ###
 
-POST {{{baseUrl}}/sessions
+# @name authenticate
+POST http://localhost:3333/sessions
 Content-Type: application/json
 
 {
-    "name": "Romeu soarea de souto",
     "email": "romeu@gmail.com",
     "password": "123456"
 }
