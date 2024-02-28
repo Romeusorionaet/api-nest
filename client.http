@@ -30,6 +30,13 @@ Content-Type: application/json
 Authorization: Bearer {{authToken}}
 
 {
-    "title": "Nova pergunta",
+    "title": "Outra pergunta",
     "content": "Conteúdo da pergunta"
 }
+
+###
+
+# @name fetch_recent_questions
+GET http://localhost:3333/questions?page=2
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
