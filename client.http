@@ -37,6 +37,6 @@ Authorization: Bearer {{authToken}}
 ###
 
 # @name fetch_recent_questions
-GET http://localhost:3333/questions?page=2
+GET http://localhost:3333/question?page=2
 Content-Type: application/json
 Authorization: Bearer {{authToken}}
