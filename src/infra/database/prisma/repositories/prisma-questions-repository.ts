@@ -51,13 +51,13 @@ export class PrismaQuestionsRepository implements QuestionsRepository {
     await this.prisma.question.delete({ where: { id: data.id } });
   }
 
-  async findManyRecent(page: PaginationParams): Promise<Question[]> {
+  async findManyRecent(params: PaginationParams): Promise<Question[]> {
     const questions = await this.prisma.question.findMany({
       orderBy: {
         createdAt: "desc",
       },
       take: 20,
-      skip: (Number(page) - 1) * 20,
+      skip: (params.page - 1) * 20,
     });
 
     return questions.map(PrismaQuestionMapper.toDomain);
