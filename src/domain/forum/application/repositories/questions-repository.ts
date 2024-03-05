@@ -1,5 +1,5 @@
 import { PaginationParams } from "@/core/repositories/pagination-params";
-import { Question } from "../../enterprise/entities/question";
+import { Question } from "@/domain/forum/enterprise/entities/question";
 
 export abstract class QuestionsRepository {
   abstract create(question: Question): Promise<void>;
