@@ -9,14 +9,16 @@ import { FetchRecentQuestionsUseCase } from "@/domain/forum/application/use-case
 import { RegisterStudentUseCase } from "@/domain/forum/application/use-cases/register-student";
 import { AuthenticateStudentsUseCase } from "@/domain/forum/application/use-cases/authenticate-student";
 import { CryptographyModule } from "../cryptography/cryptography.module";
-import { GetQuestionBySlugController } from "./controllers/get-question-by-slug-controller";
 import { GetQuestionBySlugUseCase } from "@/domain/forum/application/use-cases/get-question-by-slug";
-import { EditQuestionController } from "./controllers/edit-question-controller";
 import { EditQuestionUseCase } from "@/domain/forum/application/use-cases/edit-question";
 import { DeleteQuestionUseCase } from "@/domain/forum/application/use-cases/delete-question";
-import { DeleteQuestionController } from "./controllers/delete-question-controller";
-import { AnswerQuestionController } from "./controllers/answer-question-controller";
 import { AnswerQuestionUseCase } from "@/domain/forum/application/use-cases/answer-question";
+import { EditAnswerUseCase } from "@/domain/forum/application/use-cases/edit-answer";
+import { EditAnswerController } from "./controllers/edit-answer.controller";
+import { GetQuestionBySlugController } from "./controllers/get-question-by-slug.controller";
+import { EditQuestionController } from "./controllers/edit-question.controller";
+import { DeleteQuestionController } from "./controllers/delete-question.controller";
+import { AnswerQuestionController } from "./controllers/answer-question.controller";
 
 @Module({
   imports: [DatabaseModule, CryptographyModule],
@@ -29,6 +31,7 @@ import { AnswerQuestionUseCase } from "@/domain/forum/application/use-cases/answ
     EditQuestionController,
     DeleteQuestionController,
     AnswerQuestionController,
+    EditAnswerController,
   ],
   providers: [
     CreateQuestionUseCase,
@@ -39,6 +42,7 @@ import { AnswerQuestionUseCase } from "@/domain/forum/application/use-cases/answ
     EditQuestionUseCase,
     DeleteQuestionUseCase,
     AnswerQuestionUseCase,
+    EditAnswerUseCase,
   ],
 })
 export class HttpModule {}
