@@ -41,7 +41,6 @@ export class AnswerQuestionUseCase {
     answer.attachments = new AnswerAttachmentList(answerAttachments);
 
     await this.answersRepository.create(answer);
-    console.log(answer, "===================");
 
     return right({ answer });
   }
