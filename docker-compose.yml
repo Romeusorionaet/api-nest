@@ -9,7 +9,7 @@ services:
     environment:
       POSTGRES_USERNAME: postgres
       POSTGRES_PASSWORD: docker
-      POSTGRES_DB: api-nest
+      POSTGRES_DB: apiNest
       PGDATA: /data/postgres
     volumes:
       - /data/pg:/data/postgres

@@ -6,7 +6,7 @@ import { Test } from "@nestjs/testing";
 import request from "supertest";
 import { StudentFactory } from "test/factories/make-student";
 
-describe("Upload attachment (E2E)", () => {
+describe.only("Upload attachment (E2E)", () => {
   let app: INestApplication;
   let studentFactory: StudentFactory;
   let jwt: JwtService;
@@ -36,5 +36,8 @@ describe("Upload attachment (E2E)", () => {
       .attach("file", "./test/e2e/registrador.png");
 
     expect(response.statusCode).toBe(201);
+    expect(response.body).toEqual({
+      attachmentId: expect.any(String),
+    });
   });
 });
