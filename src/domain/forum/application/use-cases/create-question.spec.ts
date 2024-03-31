@@ -45,10 +45,10 @@ describe("Create Question", () => {
 
   test("should persist attachment when creating a new question", async () => {
     const result = await sut.execute({
-      authorId: "1",
+      authorId: "author-1",
       title: "título da pergunta",
       content: "Conteúdo da pergunta",
-      attachmentsIds: ["1", "2"],
+      attachmentsIds: ["1", "3"],
     });
 
     expect(result.isRight()).toBe(true);
@@ -59,7 +59,7 @@ describe("Create Question", () => {
           attachmentId: new UniqueEntityID("1"),
         }),
         expect.objectContaining({
-          attachmentId: new UniqueEntityID("2"),
+          attachmentId: new UniqueEntityID("3"),
         }),
       ]),
     );
