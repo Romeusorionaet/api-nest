@@ -90,7 +90,7 @@ describe("Edit Question", () => {
     expect(inMemoryQuestionsRepository.items).toHaveLength(1);
   });
 
-  test("should sync new and removed attachments when a question", async () => {
+  test("should sync new and removed attachments when editing a question", async () => {
     const newQuestion = makeQuestion(
       { authorId: new UniqueEntityID("author-1") },
       new UniqueEntityID("question-1"),
@@ -117,7 +117,10 @@ describe("Edit Question", () => {
     });
 
     expect(result.isRight()).toBe(true);
-    console.log(inMemoryQuestionAttachmentsRepository.items[1], "-======");
+    console.log(
+      inMemoryQuestionAttachmentsRepository.items[1],
+      "-==question====",
+    );
     expect(inMemoryQuestionAttachmentsRepository.items).toHaveLength(2);
     expect(inMemoryQuestionAttachmentsRepository.items).toEqual(
       expect.arrayContaining([
