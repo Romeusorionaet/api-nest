@@ -35,7 +35,7 @@ model Question {
   authorId     String    @map("author_id")
   bestAnswerId String?   @unique @map("best_answer_id")
 
-  authoId     User         @relation(fields: [authorId], references: [id])
+  author      User         @relation(fields: [authorId], references: [id])
   bestAnswer  Answer?      @relation("bestAnswer", fields: [bestAnswerId], references: [id])
   answers     Answer[]
   comments    Comment[]
